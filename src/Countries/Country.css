@@ -1,0 +1,84 @@
+.container {
+  width: 30rem;
+  margin: 4rem auto;
+}
+
+.title {
+  background-color: white;
+  font-size: 1rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.title .rotate {
+  transform: rotate(180deg);
+  transition: all 400ms ease-in-out;
+}
+
+.title .normal {
+  transform: rotate(0);
+  transition: all 400ms ease-in-out;
+}
+
+.country_data {
+  background-color: white;
+  margin-top: 1.5rem;
+  max-height: 20rem;
+  overflow-y: auto;
+  border-radius: 5px;
+  transform: translateY(-10px);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 400ms ease-in-out;
+}
+
+.showDrop {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: all 400ms ease-in-out;
+}
+
+.country_data .search {
+  display: flex;
+  align-items: center;
+  margin: 1rem;
+  padding: 0.5rem;
+  box-shadow: 0px 0px 1px 0.2px gray;
+}
+
+.search input {
+  padding: 0.3rem;
+  width: 100%;
+  border: none;
+  outline: none;
+}
+
+.country {
+  display: flex;
+  flex-direction: column;
+}
+
+.country span {
+  margin: 0 0.5rem 0 0.5rem;
+  padding: 0.6rem 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.country span:hover {
+  background-color: rgba(128, 128, 128, 0.116);
+}
+
+.block {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
