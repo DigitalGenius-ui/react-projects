@@ -1,0 +1,136 @@
+.header {
+  background-color: white;
+}
+
+.header .navbar {
+  width: 80%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 0;
+}
+
+.navbar h1 {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.navbar .links {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+}
+
+.links li {
+  list-style: none;
+  position: relative;
+  cursor: pointer;
+}
+
+.links .link:hover {
+  opacity: 0.4;
+  transition: all 100ms ease-in-out;
+}
+
+li a {
+  text-decoration: none;
+  color: black;
+}
+
+.links .link_text {
+  display: flex;
+  align-items: center;
+}
+
+.link_text span {
+  margin-top: 0.3rem;
+  font-size: 1.2rem;
+}
+
+.icon {
+  color: white;
+}
+
+.bar_menu {
+  display: none;
+}
+
+.close_menu {
+  display: none;
+}
+
+/* responsive part  */
+@media (max-width: 1060px) {
+  .header .navbar {
+    width: 90%;
+  }
+}
+
+@media (max-width: 860px) {
+  .header .navbar {
+    width: 90%;
+  }
+
+  .bar_menu {
+    display: flex;
+    font-size: 1.4rem;
+  }
+
+  .navbar .shadow {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: grid;
+    place-items: center;
+  }
+
+  .navbar .shadow {
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    align-items: flex-start;
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .navbar .links {
+    width: 18rem;
+    height: 100vh;
+    background-color: white;
+    padding: 2rem 0;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    transform: translateX(-100%);
+    transition: all 400ms ease-in-out;
+  }
+
+  .sub_list {
+    border-bottom: 1px solid gray;
+    width: 100%;
+  }
+
+  .navbar .close_menu {
+    display: block;
+    width: 100%;
+    text-align: right;
+    font-size: 1.3rem;
+    padding-right: 2rem;
+  }
+
+  .navbar .links.active {
+    transform: translateX(0);
+    transition: all 400ms ease-in-out;
+  }
+
+  .navbar .shadow.shadow_show {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+@media (max-width: 600px) {
+  .navbar .links {
+    width: 100%;
+  }
+}
