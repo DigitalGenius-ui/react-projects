@@ -78,12 +78,6 @@ li a {
   }
 
   .navbar .shadow {
-    background-color: rgba(0, 0, 0, 0.6);
-    display: grid;
-    place-items: center;
-  }
-
-  .navbar .shadow {
     position: fixed;
     inset: 0;
     background-color: rgba(0, 0, 0, 0.6);
@@ -126,6 +120,7 @@ li a {
   .navbar .shadow.shadow_show {
     opacity: 1;
     visibility: visible;
+    transition: all 400ms ease-in-out;
   }
 }
 
