@@ -7,24 +7,29 @@ export const dropMenu = [
     title: "Menu1",
     submenu: [
       {
-        title: "Submenu1",
+        title: "submenu1",
         path: "#",
       },
       {
-        title: "Submenu2",
+        title: "submenu2",
+        path: "#",
         submenu: [
           {
-            title: "Submenu1",
+            title: "submenu1",
             path: "#",
           },
           {
-            title: "Submenu2",
+            title: "submenu2",
+            path: "#",
+          },
+          {
+            title: "submenu3",
             path: "#",
           },
         ],
       },
       {
-        title: "Submenu3",
+        title: "submenu3",
         path: "#",
       },
     ],
@@ -37,15 +42,15 @@ export const dropMenu = [
     title: "Menu3",
     submenu: [
       {
-        title: "Submenu1",
+        title: "submenu1",
         path: "#",
       },
       {
-        title: "Submenu2",
+        title: "submenu2",
         path: "#",
       },
       {
-        title: "Submenu3",
+        title: "submenu3",
         path: "#",
       },
     ],

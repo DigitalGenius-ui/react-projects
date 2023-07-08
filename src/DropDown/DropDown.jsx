@@ -1,42 +1,47 @@
 import React, { useState } from "react";
 import "./DropDown.css";
 import { dropMenu } from "./data";
-import { MdOutlineKeyboardArrowDown } from "react-icons/md";
-import Submenu from "./Submenu/Submenu";
+import { IoIosArrowDown } from "react-icons/io";
 import { FaBars, FaTimes } from "react-icons/fa";
+import Menu from "./Menu/Menu";
 
 const DropDown = () => {
-  const [open, setOpen] = useState(false);
+  const [openMenu, setOpenMenu] = useState(false);
   return (
     <header className="header">
-      <div className="navbar">
-        <h1 className="title">Logo</h1>
-        {/* navigation part  */}
-        <div className={`shadow ${open && "shadow_show"}`}>
-          <ul className={`links ${open && "active"}`}>
-            <div onClick={() => setOpen(false)} className="close_menu">
-              <FaTimes />
-            </div>
-            {dropMenu.map((menu, i) => (
-              <li
-                key={i}
-                className="sub_list"
-                style={{ padding: menu.submenu ? "0.7rem 2rem" : "1rem 2rem" }}>
-                <div className="link_text">
-                  <a className="link" href={menu.path}>
-                    {menu.title}
-                  </a>
-                  <span>{menu.submenu && <MdOutlineKeyboardArrowDown />}</span>
-                </div>
-
-                {/* submenu part  */}
-                {menu.submenu && <Submenu menu={menu} />}
-              </li>
-            ))}
-          </ul>
+      <div className="wrapper">
+        <div className="logo">
+          <h1>logo</h1>
         </div>
-        <span onClick={() => setOpen(true)} className="bar_menu">
-          {<FaBars />}
+        <div
+          className={`shadow ${openMenu && "active"}`}
+          onClick={() => setOpenMenu(false)}></div>
+        <ul className={`navigation ${openMenu && "active"}`}>
+          <span className="close_menu" onClick={() => setOpenMenu(false)}>
+            <FaTimes />
+          </span>
+          {dropMenu.map((item, i) => (
+            <li key={i} className="list_menu">
+              <div className="nav_menu">
+                <a href={item.path}>{item.title}</a>
+                {item.submenu && (
+                  <span className="menu_icon">
+                    <IoIosArrowDown />
+                  </span>
+                )}
+              </div>
+              {item.submenu && (
+                <>
+                  <div className="menu">
+                    <Menu item={item} />
+                  </div>
+                </>
+              )}
+            </li>
+          ))}
+        </ul>
+        <span className="bar_menu" onClick={() => setOpenMenu(true)}>
+          <FaBars />
         </span>
       </div>
     </header>
