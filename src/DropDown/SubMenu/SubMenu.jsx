@@ -1,31 +1,32 @@
-import React from "react";
+import React, { useState } from "react";
 import { MdKeyboardArrowLeft } from "react-icons/md";
 import { IoIosArrowDown } from "react-icons/io";
 
-const Menu = ({ item }) => {
+const SubMenu = ({ menu }) => {
   return (
     <ul className="menu">
-      {item.submenu.map((item, i) => (
+      {menu.subMenu.map((sub, i) => (
         <li key={i} className="menu_list">
           <div className="nav_menu">
-            {item.submenu && (
+            {sub.subMenu && (
               <span className="icon">
                 <MdKeyboardArrowLeft />
               </span>
             )}
-            <a href={item.path}>{item.title}</a>
-            {item.submenu && (
+            <a href={sub.path}>{sub.title}</a>
+            {sub.subMenu && (
               <span className="icon2">
                 <IoIosArrowDown />
               </span>
             )}
           </div>
-          {item.submenu && (
+
+          {sub.subMenu && (
             <>
               <ul className="sub_menu">
-                {item.submenu.map((sub, i) => (
+                {sub.subMenu.map((menu, i) => (
                   <li key={i}>
-                    <a href={sub.path}>{sub.title}</a>
+                    <a href={menu.path}>{menu.title}</a>
                   </li>
                 ))}
               </ul>
@@ -37,4 +38,4 @@ const Menu = ({ item }) => {
   );
 };
 
-export default Menu;
+export default SubMenu;

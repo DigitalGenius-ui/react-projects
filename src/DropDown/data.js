@@ -5,15 +5,14 @@ export const dropMenu = [
   },
   {
     title: "Menu1",
-    submenu: [
+    subMenu: [
       {
         title: "submenu1",
         path: "#",
       },
       {
         title: "submenu2",
-        path: "#",
-        submenu: [
+        subMenu: [
           {
             title: "submenu1",
             path: "#",
@@ -40,7 +39,7 @@ export const dropMenu = [
   },
   {
     title: "Menu3",
-    submenu: [
+    subMenu: [
       {
         title: "submenu1",
         path: "#",

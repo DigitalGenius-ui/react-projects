@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "./DropDown.css";
 import { dropMenu } from "./data";
 import { IoIosArrowDown } from "react-icons/io";
+import SubMenu from "./SubMenu/SubMenu";
 import { FaBars, FaTimes } from "react-icons/fa";
-import Menu from "./Menu/Menu";
 
 const DropDown = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -13,29 +13,26 @@ const DropDown = () => {
         <div className="logo">
           <h1>logo</h1>
         </div>
-        <div
-          className={`shadow ${openMenu && "active"}`}
-          onClick={() => setOpenMenu(false)}></div>
+        <div className={`shadow ${openMenu && "active"}`} />
         <ul className={`navigation ${openMenu && "active"}`}>
           <span className="close_menu" onClick={() => setOpenMenu(false)}>
             <FaTimes />
           </span>
-          {dropMenu.map((item, i) => (
+          {dropMenu.map((menu, i) => (
             <li key={i} className="list_menu">
               <div className="nav_menu">
-                <a href={item.path}>{item.title}</a>
-                {item.submenu && (
+                <a href={menu.path}>{menu.title}</a>
+                {menu.subMenu && (
                   <span className="menu_icon">
                     <IoIosArrowDown />
                   </span>
                 )}
               </div>
-              {item.submenu && (
-                <>
-                  <div className="menu">
-                    <Menu item={item} />
-                  </div>
-                </>
+
+              {menu.subMenu && (
+                <div className="sub_menu">
+                  <SubMenu menu={menu} />
+                </div>
               )}
             </li>
           ))}
